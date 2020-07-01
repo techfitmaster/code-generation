@@ -1,0 +1,6 @@
+package ${package}.service;
+import ${package}.domain.${className};
+
+public interface  ${className}Service extends Service<${className}> {
+
+}

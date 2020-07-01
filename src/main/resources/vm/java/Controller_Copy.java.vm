@@ -1,0 +1,67 @@
+package ${package}.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import ${package}.domain.${className};
+import ${package}.service.${className}Service;
+
+@RestController("/${classname}")
+public class ${className}Controller {
+
+    @Autowired
+    private ${className}Service ${classname}Service;
+
+
+
+    @GetMapping("/{${primaryKey.attrname}}")
+    public ResponseEntity get(@PathVariable("${primaryKey.attrname}") ${primaryKey.attrType} ${primaryKey.attrname}) {
+        ${className} ${classname} =${classname}Service.select${className}ById(${primaryKey.attrname});
+        return ResponseEntity.ok(${classname});
+    }
+
+
+
+
+
+    @PostMapping("/list")
+    @ResponseBody
+    public ResponseEntity list(${className} ${classname}) {
+        startPage();
+        List<${className}> list = ${classname}Service.select${className}List(${classname});
+        return getDataTable(list);
+    }
+
+    @GetMapping()
+    public String add() {
+        return prefix + "/add";
+    }
+
+    @GetMapping("/edit/{${primaryKey.attrname}}")
+    public String edit(@PathVariable("${primaryKey.attrname}") ${primaryKey.attrType} ${primaryKey.attrname}, Model model) {
+        ${className} ${classname} =${classname}Service.select${className}ById(${primaryKey.attrname});
+        model.addAttribute("${classname}", ${classname});
+        return prefix + "/edit";
+    }
+
+    @PostMapping()
+    public ResponseEntity save(${className} ${classname}) {
+        if (${classname}Service.save${className}(${classname}) > 0) {
+            return success();
+        }
+        return error();
+    }
+
+    @DeleteMapping("/remove")
+    public ResponseEntity remove(String id) {
+        int rows = ${classname}Service.delete${className}ByIds(ids);
+        if (rows > 0) {
+            return success();
+        }
+        return error();
+    }
+
+}

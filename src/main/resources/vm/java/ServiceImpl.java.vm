@@ -1,0 +1,11 @@
+package ${package}.service.impl;
+
+import com.nvxclouds.domain.${className};
+import com.nvxclouds.service.AbstractService;
+import org.springframework.stereotype.Service;
+import ${package}.service.${className}Service;
+
+@Service
+public class ${className}ServiceImpl extends AbstractService<${className}> implements  ${className}Service {
+
+}

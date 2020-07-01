@@ -1,0 +1,45 @@
+package ${package}.controller;
+
+import ${package}.domain.${className};
+import ${package}.service.${className}Service;
+import com.nvxclouds.pojo.BaseResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/${classname}")
+public class ${className}Controller {
+
+    @Autowired
+    private ${className}Service ${classname}Service;
+
+    @PostMapping()
+    public BaseResult<Void> save(${className} ${classname}) {
+        ${classname}Service.add(${classname});
+        return BaseResult.ok();
+    }
+
+    @DeleteMapping("{id}")
+    public BaseResult<Void> remove(@PathVariable("id") Long id) {
+        ${classname}Service.delete(id);
+        return BaseResult.ok();
+    }
+
+    @PutMapping()
+    public BaseResult<Void> modify(${className} ${classname}) {
+        ${classname}Service.update(${classname});
+        return BaseResult.ok();
+    }
+
+    @GetMapping("{id}")
+    public BaseResult<${className}> get(@PathVariable("id") Long id) {
+        return BaseResult.ok(${classname}Service.select(id));
+    }
+
+    @GetMapping()
+    public BaseResult<List<${className}>> query(${className} ${classname}) {
+        return BaseResult.ok(${classname}Service.query(${classname}));
+    }
+
+}
