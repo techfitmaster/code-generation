@@ -28,5 +28,11 @@ public class ParamInfo {
     /**
      * 设定参数类型
      */
-    private String type;
+    private String type = "String";
+
+
+    /**
+     * 是否必填(0-非必须; 1-必须)
+     */
+    private String required;
 }

@@ -1,0 +1,138 @@
+[
+  {
+    "index": 0,
+    "name": "公共分类",
+    "desc": "公共分类",
+    "add_time": 1593652891,
+    "up_time": 1593652891,
+    "list": [
+      {
+        "query_path": {
+          "path": "/get/info/by/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 133,
+        "method": "GET",
+        "catid": 62,
+        "title": "GET--入参在url中",
+        "path": "/get/info/by/{id}",
+        "project_id": 16,
+        "req_params": [
+          {
+            "_id": "5efd7e7a85378c0a7c35bc39",
+            "name": "id",
+            "example": "123",
+            "desc": "用户ID"
+          }
+        ],
+        "res_body_type": "json",
+        "uid": 15,
+        "add_time": 1593670259,
+        "up_time": 1593671290,
+        "req_query": [],
+        "req_headers": [],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"statusCode\":{\"type\":\"string\"},\"statusMessage\":{\"type\":\"string\"},\"data\":{\"type\":\"object\",\"properties\":{}}}}"
+      },
+      {
+        "query_path": {
+          "path": "/get/info",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": false,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 139,
+        "method": "GET",
+        "catid": 62,
+        "title": "GET--入参在url之后拼接",
+        "path": "/get/info",
+        "project_id": 16,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 15,
+        "add_time": 1593670472,
+        "up_time": 1593673569,
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "5efd876185378c0a7c35bc3b",
+            "name": "id",
+            "example": "123",
+            "desc": "用户ID"
+          },
+          {
+            "required": "0",
+            "_id": "5efd876185378c0a7c35bc3a",
+            "name": "name",
+            "example": "jens",
+            "desc": "用户名称"
+          }
+        ],
+        "req_headers": [],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"statusCode\":{\"type\":\"string\"},\"statusMessage\":{\"type\":\"string\"},\"data\":{\"type\":\"object\",\"properties\":{}}}}"
+      },
+      {
+        "query_path": {
+          "path": "/post",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 145,
+        "method": "POST",
+        "catid": 62,
+        "title": "POST--入参为body",
+        "path": "/post",
+        "project_id": 16,
+        "req_params": [],
+        "res_body_type": "json",
+        "uid": 15,
+        "add_time": 1593670613,
+        "up_time": 1593670734,
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5efd7c4e85378c0a7c35bc37",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_body_form": [],
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"用户ID\"},\"name\":{\"type\":\"string\",\"description\":\"用户名称\"}},\"required\":[\"id\",\"name\"]}",
+        "req_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"statusCode\":{\"type\":\"string\"},\"statusMessage\":{\"type\":\"string\"},\"data\":{\"type\":\"object\",\"properties\":{}}}}"
+      }
+    ]
+  }
+]

@@ -19,7 +19,6 @@ import java.util.List;
 public class InterfaceInfo {
 
 
-
     /**
      * 接口请求地址 -> 1. 接口是地址 2.请求参数，返回参数，方法命名
      */
@@ -37,13 +36,23 @@ public class InterfaceInfo {
     private String method;
 
     /**
-     * 请求参数设定
+     * 请求参数设定(url之中)
      */
-    private List<ParamInfo> params;
+    private List<ParamInfo> reqParams;
+
+    /**
+     * 请求参数设定(url之后)
+     */
+    private List<ParamInfo> reqQuerys;
+
+    /**
+     * 请求参数设定(body)
+     */
+    private String reqBody;
 
     /**
      * 返回参数设定
      */
-    private List<ParamInfo> resBody;
+    private String resBody;
 
 }
