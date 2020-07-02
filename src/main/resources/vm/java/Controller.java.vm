@@ -5,6 +5,7 @@ import ${package}.service.${className}Service;
 import com.nvxclouds.pojo.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -14,32 +15,34 @@ public class ${className}Controller {
     @Autowired
     private ${className}Service ${classname}Service;
 
-    @PostMapping()
-    public BaseResult<Void> save(${className} ${classname}) {
-        ${classname}Service.add(${classname});
-        return BaseResult.ok();
-    }
 
-    @DeleteMapping("{id}")
-    public BaseResult<Void> remove(@PathVariable("id") Long id) {
-        ${classname}Service.delete(id);
-        return BaseResult.ok();
-    }
 
-    @PutMapping()
-    public BaseResult<Void> modify(${className} ${classname}) {
-        ${classname}Service.update(${classname});
-        return BaseResult.ok();
-    }
+    #foreach ($interfaceInfo in $interfaceInfos)
+        #if($interfaceInfo.method == "get")
+            @GetMapping($interfaceInfo.path)
+            public BaseResult<${interfaceInfo.functionName}VO> get${interfaceInfo.functionName}(@PathVariable("id") Long id) {
+                return BaseResult.ok(${classname}Service.select(id));
+            }
+        #elseif($interfaceInfo.method == "post")
+            @PostMapping($interfaceInfo.path)
+            public BaseResult<Void> save${interfaceInfo.functionName}(${interfaceInfo.functionName}DTO ${classname}) {
+                    ${classname}Service.add(${classname});
+                return BaseResult.ok();
+            }
+        #elseif($interfaceInfo.method == "put")
+            @PutMapping($interfaceInfo.path)
+            public BaseResult<Void> modify${interfaceInfo.functionName}(${interfaceInfo.functionName}DTO ${classname}) {
+                    ${classname}Service.update(${classname});
+                return BaseResult.ok();
+            }
 
-    @GetMapping("{id}")
-    public BaseResult<${className}> get(@PathVariable("id") Long id) {
-        return BaseResult.ok(${classname}Service.select(id));
-    }
-
-    @GetMapping()
-    public BaseResult<List<${className}>> query(${className} ${classname}) {
-        return BaseResult.ok(${classname}Service.query(${classname}));
-    }
+        #elseif($interfaceInfo.method == "delete")
+            @DeleteMapping($interfaceInfo.path)
+            public BaseResult<Void> remove${interfaceInfo.functionName}(@PathVariable("id") Long id) {
+                    ${classname}Service.delete(id);
+                return BaseResult.ok();
+            }
+        #end
+    #end
 
 }

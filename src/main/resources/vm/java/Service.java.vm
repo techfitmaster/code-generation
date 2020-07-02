@@ -1,6 +1,21 @@
 package ${package}.service;
 import ${package}.domain.${className};
 
-public interface  ${className}Service extends Service<${className}> {
+public interface  ${className}Service {
+    #foreach ($interfaceInfo in $interfaceInfos)
+        #if($interfaceInfo.method == "get")
+            @GetMapping($interfaceInfo.path)
+            BaseResult<${interfaceInfo.functionName}VO> get${interfaceInfo.functionName}(Long id)
+        #elseif($interfaceInfo.method == "post")
+            @PostMapping($interfaceInfo.path)
+            BaseResult<Void> save${interfaceInfo.functionName}(${interfaceInfo.functionName}DTO ${classname})
+        #elseif($interfaceInfo.method == "put")
+            @PutMapping($interfaceInfo.path)
+            BaseResult<Void> modify${interfaceInfo.functionName}(${interfaceInfo.functionName}DTO ${classname})
+        #elseif($interfaceInfo.method == "delete")
+            @DeleteMapping($interfaceInfo.path)
+            BaseResult<Void> remove${interfaceInfo.functionName}(@PathVariable("id") Long id)
+        #end
+    #end
 
 }
