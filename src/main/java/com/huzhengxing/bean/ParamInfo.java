@@ -34,5 +34,5 @@ public class ParamInfo {
     /**
      * 是否必填(0-非必须; 1-必须)
      */
-    private String required;
+    private String required = "0";
 }

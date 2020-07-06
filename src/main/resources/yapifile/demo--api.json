@@ -94,6 +94,47 @@
       },
       {
         "query_path": {
+          "path": "/post_1594016202855",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [],
+        "_id": 184,
+        "method": "POST",
+        "catid": 62,
+        "title": "POST--入参为body, 返回String",
+        "path": "/post_1594016202855",
+        "project_id": 16,
+        "req_params": [],
+        "res_body_type": "json",
+        "req_query": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "5f02c1df3a810d808441020e",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_body_form": [],
+        "desc": "",
+        "markdown": "",
+        "req_body_other": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"用户ID\"},\"name\":{\"type\":\"string\",\"description\":\"用户名称\"}},\"required\":[\"id\",\"name\"]}",
+        "req_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"statusCode\":{\"type\":\"string\"},\"statusMessage\":{\"type\":\"string\"},\"data\":{\"type\":\"string\"}}}",
+        "uid": 15,
+        "add_time": 1594016202,
+        "up_time": 1594016223,
+        "__v": 0
+      },
+      {
+        "query_path": {
           "path": "/post",
           "params": []
         },
@@ -108,19 +149,19 @@
         "_id": 145,
         "method": "POST",
         "catid": 62,
-        "title": "POST--入参为body",
+        "title": "POST--入参为body, 返回body",
         "path": "/post",
         "project_id": 16,
         "req_params": [],
         "res_body_type": "json",
         "uid": 15,
         "add_time": 1593670613,
-        "up_time": 1593670734,
+        "up_time": 1594016200,
         "req_query": [],
         "req_headers": [
           {
             "required": "1",
-            "_id": "5efd7c4e85378c0a7c35bc37",
+            "_id": "5f02c1c83a810d808441020c",
             "name": "Content-Type",
             "value": "application/json"
           }
@@ -131,7 +172,7 @@
         "markdown": "",
         "req_body_other": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"用户ID\"},\"name\":{\"type\":\"string\",\"description\":\"用户名称\"}},\"required\":[\"id\",\"name\"]}",
         "req_body_type": "json",
-        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"statusCode\":{\"type\":\"string\"},\"statusMessage\":{\"type\":\"string\"},\"data\":{\"type\":\"object\",\"properties\":{}}}}"
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"statusCode\":{\"type\":\"string\"},\"statusMessage\":{\"type\":\"string\"},\"data\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"description\":\"用户ID\"},\"name\":{\"type\":\"string\",\"description\":\"用户姓名\"}}}}}"
       }
     ]
   }
